@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simroel</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="page_front">
+    <div class="header">
+        <h1>Simulador De Rede</h1>
+    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Tab1')">Camada Física</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">Camada De Rede</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab3')">Parametros De Simulação</button>
+    </div>
+
+    <div id="Tab1" class="tabcontent">
+        <h3>Camada Física</h3>
+        <p>Configurações de Camada Física para simulação.</p>
+        <div class="insert1">traffic_file:
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="insert1">traffic_refresh :
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <form class="insert1">
+            <label for="fname">slot_size:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+        </form>
+        <form class="insert1">
+            <label for="fname">n_cores:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+        </form>
+        <form class="insert1">
+            <label for="fname">file_topology:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+        </form>
+        <form class="insert1">
+            <label for="fname">bandwidth:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+        </form>
+    </div>
+    <div id="Tab2" class="tabcontent">
+        <h3>Camada De Rede</h3>
+        <p>Configurações de Camada de Rede.</p>
+        <div class="drop">
+            <label for="Rede">Topology:</label>
+               <select name="Rede" id="Rede">
+                   <option value="dt">dt</option>
+                   <option value="nsfnet">nsfnet</option>
+               </select>
+           </div>
+        <div class="insert1">
+            <label for="fname">guard_band:</label><br>
+            <input type="number" id="fname" name="fname" value="1" min="1"><br>
+        </div>
+        <div class="drop">
+            <label for="Rede">N_cores:</label>
+               <select name="Rede" id="Rede">
+                   <option value="1">1</option>
+                   <option value="7">7</option>
+                   <option value="12">12</option>
+                   <option value="19">19</option>
+               </select>
+           </div>
+           <div class="drop">
+            <label for="Rede">modulation:</label>
+            <select name="Rede" id="Rede">
+                <option value="64-QAM">64-QAM</option>
+                <option value="32-QAM">32-QAM</option>
+                <option value="16-QAM">16-QAM</option>
+                <option value="8-QAM">8-QAM</option>
+                <option value="4-QAM">4-QAM</option>
+            </select>
+        </div>
+        <div class="drop">
+            <label for="Rede">OSNR-pertype:</label>
+               <select name="Rede" id="Rede">
+                   <option value="hdfeq">hdfeq</option>
+                   <option value="nsfnet">sdfeq</option>
+               </select>
+           </div>
+        <div class="insert1">
+            <label for="span_length">Span Length:</label><br>
+            <input type="number" id="span_length" name="span_length" min="80" max="100" value="80"><br>
+        </div>
+        <div class="insert1">
+            <label for="node_loss">Node Loss:</label><br>
+            <input type="number" id="node_loss" name="node_loss" value="0.2"><br>
+        </div>
+        <div class="drop">
+            <label for="Rede">trafic_conn_type:</label>
+            <select name="Rede" id="Rede">
+                <option value="48">48</option>
+                <option value="120">120</option>
+                <option value="480">480</option>
+                <option value="1200">1200</option>
+            </select>
+        </div>
+        <div class="drop">
+            <label for="Rede">fiber_allocation:</label>
+            <select name="Rede" id="Rede">
+                <option value="first_fit">first_fit</option>
+                <option value="random_fit">random_fit</option>
+            </select>
+        </div>
+        <div class="drop">
+            <label for="Rede">type_core_selection:</label>
+            <select name="Rede" id="Rede">
+                <option value="first_fit">first_fit</option>
+                <option value="random_fit">random_fit</option>
+            </select>
+        </div>
+        <div class="insert1">tracer:
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div id="Tab3" class="tabcontent">
+        <h3>Parametros De Simulação</h3>
+        <p>Configuração de algoritmos Para Simulação.</p>
+        <form>
+            <div class="insert1">
+                <label for="n_simulations">N_simulations:</label><br>
+                <input type="number" id="n_simulations" name="n_simulations" value="1" min="1"><br>
+            </div>
+            <div class="insert1">
+                <label for="fname">traffic_lambda:</label><br>
+                <input type="number" id="fname" name="fname" value=1 min="1"><br>
+            </div>
+            <div class="insert1">
+                <label for="calculate_crosstalk">Calculate Crosstalk:</label><br>
+                <input type="checkbox" id="calculate_crosstalk" name="calculate_crosstalk" value="true"><br>
+            </div>
+        </form>
+    </div>
+    <!--
+    <div class="ch_box">
+        <form action="">
+            <input type="checkbox" id="ch_b" name="ch_b" value="box">
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+        </form>
+    </div>
+    -->
+    <div>
+        <form action="/submit">
+            <input type="submit" value="Enviar" class="button">
+        </form>
+    </div>
+    <script src="app.js"></script>
+    <noscript>you need javascript to view the full site.</noscript>
+</body>
+
+</html>
